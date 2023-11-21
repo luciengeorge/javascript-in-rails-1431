@@ -1,0 +1,15 @@
+
+<%= simple_form_for(monument) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :opening_date, as: :string, input_html: { class: "actual-input", data: { controller: "datepicker" } }, wrapper_html: { class: "wrapper-of-input" }, label_html: { class: "class-for-label" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

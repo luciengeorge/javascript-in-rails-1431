@@ -1,9 +1,9 @@
 import {Controller} from '@hotwired/stimulus'
+import flatpickr from 'flatpickr'
 
+// Connects to data-controller="datepicker"
 export default class extends Controller {
   connect() {
-    setTimeout(() => {
-      this.element.textContent = 'Hello World!'
-    }, 1000)
+    flatpickr(this.element)
   }
 }
